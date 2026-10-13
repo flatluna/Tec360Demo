@@ -1,0 +1,209 @@
+﻿#root { min-height: 100dvh; }
+.presentation-shell { min-height: 100dvh; height: 100dvh; overflow: hidden; padding: clamp(20px, 3.5vw, 52px) clamp(22px, 6vw, 104px) clamp(18px, 3vw, 42px); display: grid; grid-template-rows: auto 1fr auto; background: #f5f7fa; position: relative; }
+.presentation-shell::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(118deg, rgba(10,48,82,.06), transparent 50%), linear-gradient(90deg, transparent 49.9%, rgba(10,48,82,.04) 50%, transparent 50.1%); }
+.topbar, .bottom-bar, .slide { position: relative; z-index: 1; }
+.topbar, .bottom-bar-row { display: flex; align-items: center; justify-content: space-between; }
+.bottom-bar { display: flex; flex-direction: column; gap: 6px; }
+.confidential-note { margin: 0; text-align: center; color: #51677c; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: .05em; }
+.topbar, .bottom-bar, .eyebrow, .art-label, .art-caption { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .13em; }
+.brand-lockup, .topbar-meta, .progress, .navigation, .slide-cta { display: flex; align-items: center; }
+.brand-lockup { gap: 10px; font-weight: 600; }.brand-mark { width: 31px; height: 31px; display: grid; place-items: center; background: #0a3052; color: #fff; border-radius: 50%; }.topbar-meta { gap: 14px; opacity: .7; }.meta-divider { width: 28px; height: 1px; background: currentColor; opacity: .6; }
+.tec360-topbar-logo { height: 48px; width: auto; mix-blend-mode: multiply; }
+.differentiator-tag { margin: 0; color: #e45b2f; font-weight: 700; font-size: clamp(11px, 1vw, 14px); letter-spacing: .04em; text-align: center; }
+.icon-button, .navigation button { border: 0; cursor: pointer; display: grid; place-items: center; color: inherit; background: transparent; }.icon-button { width: 38px; height: 38px; border: 1px solid rgba(10,48,82,.25); border-radius: 50%; }
+.slide { display: grid; grid-template-columns: minmax(0,1.04fr) minmax(280px,.96fr); align-items: center; gap: 4vw; min-height: 0; height: 100%; overflow: hidden; }.slide-copy { max-width: 680px; padding: 3vh 0; animation: reveal .65s ease both; }.eyebrow { color: #e45b2f; margin: 0 0 clamp(18px,3.5vh,36px); }
+h1 { max-width: 760px; color: #0a3052; font-size: clamp(42px,6.5vw,100px); font-weight: 500; line-height: .98; letter-spacing: -.06em; margin: 0; }.description { max-width: 420px; margin: clamp(24px,5vh,52px) 0 0; font-size: clamp(16px,1.4vw,21px); line-height: 1.38; color: #40566b; }.slide-cta { gap: 11px; margin-top: clamp(24px,5vh,48px); color: #0a3052; text-transform: uppercase; }.play-icon { width: 27px; height: 27px; border: 1px solid #0a3052; border-radius: 50%; display: grid; place-items: center; padding-left: 2px; }
+.slide-art { width: min(48vw, 650px); justify-self: end; display: grid; place-items: center; }.tec360-logo { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.presentamos-slide { grid-column: 1 / -1; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(20px, 4vh, 40px); text-align: center; animation: reveal .65s ease both; }
+.presentamos-slide h1 { max-width: none; }
+.presentamos-logo-row { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 56px); flex-wrap: wrap; }
+.presentamos-logo { width: min(300px, 38vw); height: auto; mix-blend-mode: multiply; }
+.presentamos-logo-xl { width: min(560px, 65vw); }
+.presentamos-note { max-width: 760px; margin: 0; color: #1c7ed6; font-size: clamp(20px, 2.2vw, 28px); font-weight: 600; line-height: 1.4; }
+.memory-slide-content { grid-column: 1 / -1; width: 100%; align-self: center; }.memory-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); gap: 7vw; align-items: end; margin-bottom: clamp(24px, 4vh, 42px); }.memory-heading h1 { font-size: clamp(34px, 5vw, 72px); max-width: 720px; }.memory-lead { max-width: 430px; margin: 0 0 4px; color: #40566b; font-size: clamp(16px, 1.25vw, 19px); line-height: 1.4; }.concept-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }.concept-card { min-height: 210px; padding: 21px 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; background: #fff; border: 1px solid rgba(10,48,82,.14); border-top: 3px solid #f58220; box-shadow: 0 8px 22px rgba(10,48,82,.06); }.concept-icon { width: 42px; height: 42px; display: grid; place-items: center; color: #0a3052; background: #e8f0f6; border-radius: 50%; }.concept-card h2 { margin: 0 0 8px; color: #0a3052; font-size: 18px; font-weight: 600; }.concept-card p { margin: 0; color: #40566b; font-size: 13px; line-height: 1.42; }
+.source-note { margin: 18px 0 0; color: #627588; font-family: 'DM Mono', monospace; font-size: 9px; line-height: 1.5; }.source-note a { color: #0a3052; text-underline-offset: 3px; }
+.concept-grid .concept-card::after { display: block; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(10,48,82,.12); color: #0a3052; font-size: 11px; line-height: 1.35; }
+.concept-grid .concept-card:nth-child(1)::after { content: 'Ejemplo: copiar una explicación de IA sin intentar resolver primero el problema.'; }
+.concept-grid .concept-card:nth-child(2)::after { content: 'Ejemplo: recordar cómo aplicar una fórmula porque la recuperaste y usaste varias veces.'; }
+.concept-grid .concept-card:nth-child(3)::after { content: 'Ejemplo: reconocer que un nuevo caso de negocio se parece a uno estudiado antes.'; }
+.concept-grid .concept-card:nth-child(4)::after { content: 'Ejemplo: cerrar los apuntes y explicar el concepto con tus propias palabras.'; }
+.concept-grid .concept-card:nth-child(5)::after { content: 'Ejemplo: practicar hoy, volver a intentarlo en 48 horas y repetir la semana siguiente.'; }
+
+/* SLIDE 4 HUMAN OS SPECIFIC STYLING */
+.humanos-slide-content { grid-column: 1 / -1; width: 100%; height: 100%; max-height: calc(100dvh - 160px); overflow-y: auto; padding-right: 12px; display: flex; flex-direction: column; gap: clamp(20px, 3vh, 32px); animation: reveal .65s ease both; scrollbar-width: thin; scrollbar-color: rgba(10,48,82,.2) transparent; }
+.humanos-slide-content::-webkit-scrollbar { width: 6px; }
+.humanos-slide-content::-webkit-scrollbar-thumb { background: rgba(10,48,82,.2); border-radius: 4px; }
+.humanos-heading { border-bottom: 1px solid rgba(10,48,82,.12); padding-bottom: 16px; }
+.humanos-heading h1 { font-size: clamp(32px, 4.2vw, 56px); margin: 0 0 8px; }
+.humanos-lead { margin: 0; max-width: 700px; color: #40566b; font-size: clamp(14px, 1.15vw, 17px); line-height: 1.45; }
+.humanos-heading .humanos-lead { max-width: 900px; font-size: clamp(20px, 2.1vw, 30px); font-weight: 600; line-height: 1.35; background: linear-gradient(90deg, #0a3052, #1c7ed6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.humanos-cards-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.humanos-card { background: #fff; border: 1px solid rgba(10,48,82,.12); border-top: 3px solid #f58220; border-radius: 6px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 4px 14px rgba(10,48,82,.04); }
+.humanos-card-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #e45b2f; }
+.humanos-card-main { display: flex; align-items: center; gap: 10px; }
+.humanos-card-icon { width: 36px; height: 36px; display: grid; place-items: center; color: #0a3052; background: #e8f0f6; border-radius: 50%; flex-shrink: 0; }
+.humanos-card-main h2 { margin: 0; font-size: 20px; font-weight: 600; color: #0a3052; }
+.humanos-card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; color: #0a3052; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .04em; text-decoration: none; }
+.humanos-card-link:hover { color: #e45b2f; }
+.humanos-card-text { margin: 0; color: #40566b; font-size: 13px; line-height: 1.42; }
+
+.humanos-cta-link { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; color: #fff; background: #0a3052; border-radius: 999px; padding: 9px 18px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .03em; text-decoration: none; }
+.humanos-cta-link:hover { background: #e45b2f; }
+.humanos-cta-tag { color: rgba(255,255,255,.65); font-size: 10px; }
+
+.humanos-flow-note { display: flex; align-items: flex-start; gap: 10px; background: rgba(10,48,82,.04); border-left: 3px solid #0a3052; border-radius: 4px; padding: 12px 16px; }
+.humanos-flow-icon { color: #e45b2f; flex-shrink: 0; margin-top: 2px; }
+.humanos-flow-note p { margin: 0; color: #40566b; font-size: 13px; line-height: 1.45; }
+.humanos-flow-note strong { color: #0a3052; }
+
+.humanos-tec-section { display: flex; flex-direction: column; gap: 16px; }
+.humanos-video-player { width: 100%; max-height: 360px; border-radius: 12px; background: #000; }
+.humanos-tec-header { display: flex; flex-direction: column; gap: 6px; max-width: 820px; }
+.humanos-tec-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #e45b2f; }
+.humanos-tec-header h2 { margin: 0; font-size: clamp(22px, 2.4vw, 30px); color: #0a3052; font-weight: 700; }
+.humanos-tec-header p { margin: 0; color: #40566b; font-size: 13px; line-height: 1.45; }
+
+.humanos-stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.humanos-stage-card { background: #fff; border: 1px solid rgba(10,48,82,.12); border-radius: 6px; padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 14px rgba(10,48,82,.04); }
+.humanos-stage-card.current-stage { border: 1px solid rgba(228,91,47,.35); border-top: 3px solid #e45b2f; background: #fffcfb; }
+.humanos-stage-top { display: flex; align-items: center; justify-content: space-between; }
+.humanos-stage-number { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 700; color: #cbd5e1; }
+.current-stage .humanos-stage-number { color: #e45b2f; }
+.humanos-stage-icon { width: 30px; height: 30px; display: grid; place-items: center; color: #0a3052; background: #e8f0f6; border-radius: 50%; }
+.humanos-stage-card h3 { margin: 0; font-size: 15px; font-weight: 700; color: #0a3052; }
+.humanos-stage-card p { margin: 0; color: #51677c; font-size: 12px; line-height: 1.4; flex: 1; }
+.humanos-stage-tag { align-self: flex-start; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .05em; color: #fff; background: #e45b2f; padding: 3px 9px; border-radius: 999px; }
+.humanos-stage-tag.muted { color: #40566b; background: rgba(10,48,82,.08); }
+
+.humanos-audience-note { display: flex; align-items: flex-start; gap: 10px; background: #0a3052; border-left: 4px solid #f58220; border-radius: 4px; padding: 14px 18px; }
+.humanos-audience-icon { color: #f58220; flex-shrink: 0; margin-top: 2px; }
+.humanos-audience-note p { margin: 0; color: #fff; font-size: 12px; line-height: 1.45; font-weight: 500; }
+
+/* SLIDE 3 MIT SPECIFIC STYLING */
+.mit-slide-container { grid-column: 1 / -1; width: 100%; height: 100%; max-height: calc(100dvh - 160px); overflow-y: auto; padding-right: 12px; display: flex; flex-direction: column; gap: 20px; animation: reveal .65s ease both; scrollbar-width: thin; scrollbar-color: rgba(10,48,82,.2) transparent; }
+.mit-slide-container::-webkit-scrollbar { width: 6px; }
+.mit-slide-container::-webkit-scrollbar-thumb { background: rgba(10,48,82,.2); border-radius: 4px; }
+.mit-header { border-bottom: 1px solid rgba(10,48,82,.12); padding-bottom: 14px; }
+.mit-header .eyebrow { margin: 0 0 6px; font-weight: 600; }
+.mit-title { font-size: clamp(28px, 3.2vw, 44px); color: #0a3052; font-weight: 700; margin: 0 0 8px; letter-spacing: -.03em; }
+.mit-subtitle { margin: 0; color: #40566b; font-size: clamp(14px, 1.15vw, 17px); line-height: 1.45; max-width: 980px; }
+
+.mit-section { display: flex; flex-direction: column; gap: 10px; }
+.mit-section-title { display: flex; align-items: baseline; gap: 14px; }
+.mit-section-title h2 { font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: #0a3052; margin: 0; font-family: 'DM Mono', monospace; font-weight: 700; }
+.mit-section-badge { font-family: 'DM Mono', monospace; font-size: 11px; color: #e45b2f; background: rgba(228,91,47,.08); padding: 2px 8px; border-radius: 4px; }
+
+.mit-cards-grid { display: grid; gap: 12px; }
+.mit-cards-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+.mit-cards-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+.mit-cards-grid.two-col-unequal { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+
+.mit-card { background: #fff; border: 1px solid rgba(10,48,82,.12); border-radius: 6px; padding: 16px 18px; box-shadow: 0 4px 14px rgba(10,48,82,.04); display: flex; flex-direction: column; }
+.condition-card { border-top: 3px solid #0a3052; gap: 6px; }
+.condition-card .mit-card-header { display: flex; align-items: center; gap: 8px; }
+.condition-card .mit-card-icon { color: #f58220; display: flex; }
+.condition-card h3 { margin: 0; font-size: 14px; font-weight: 700; color: #0a3052; letter-spacing: .02em; }
+.condition-card .mit-card-body { margin: 0; color: #40566b; font-size: 13px; }
+.mit-card-result { margin: 4px 0 0; color: #0a3052; font-size: 11.5px; font-weight: 600; line-height: 1.35; }
+
+.mit-exp-note { margin: 4px 0 0; color: #51677c; font-size: 12px; line-height: 1.45; background: rgba(10,48,82,.03); padding: 8px 12px; border-radius: 4px; border-left: 3px solid #0a3052; }
+
+.result-card { border-top: 3px solid #cbd5e1; gap: 6px; }
+.result-card.highlight-card { border-top: 3px solid #e45b2f; background: #fffcfb; }
+.mit-card-badge-top { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; color: #0a3052; margin-bottom: 2px; }
+.mit-result-heading { margin: 0; font-size: 17px; font-weight: 700; color: #0a3052; }
+.result-card p { margin: 0; color: #40566b; font-size: 12.5px; line-height: 1.42; }
+
+.mit-stat-card { background: #fff; border: 1px solid rgba(10,48,82,.12); border-left: 4px solid #e45b2f; border-radius: 6px; padding: 18px 20px; display: flex; align-items: center; gap: 24px; box-shadow: 0 4px 14px rgba(10,48,82,.04); }
+.mit-stat-value { font-size: clamp(40px, 4.2vw, 62px); font-weight: 700; color: #e45b2f; line-height: 1; letter-spacing: -.03em; white-space: nowrap; }
+.mit-stat-info h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; color: #0a3052; line-height: 1.35; }
+.mit-stat-info p { margin: 0; font-size: 12px; color: #51677c; line-height: 1.4; }
+
+.mit-session4-card { background: #fff; border: 1px solid rgba(10,48,82,.12); border-radius: 6px; padding: 16px 18px; box-shadow: 0 4px 14px rgba(10,48,82,.04); display: flex; flex-direction: column; gap: 8px; }
+.mit-session4-card .mit-card-header { display: flex; align-items: center; gap: 8px; }
+.mit-session4-card .mit-card-header h3 { margin: 0; font-size: 13.5px; font-weight: 700; color: #0a3052; letter-spacing: .02em; }
+.mit-session4-card p { margin: 0; color: #40566b; font-size: 12.5px; line-height: 1.38; }
+.mit-session4-callout { background: rgba(10,48,82,.04); padding: 8px 12px; border-radius: 4px; font-size: 12px; color: #0a3052; line-height: 1.4; }
+
+.mit-conclusion-card { background: #fff; border: 1px solid rgba(10,48,82,.12); border-top: 3px solid #0a3052; border-radius: 6px; padding: 18px; box-shadow: 0 4px 14px rgba(10,48,82,.04); display: flex; flex-direction: column; gap: 10px; }
+.mit-conclusion-card .mit-card-header { display: flex; align-items: center; gap: 8px; }
+.mit-conclusion-card .mit-card-header h3 { margin: 0; font-size: 13.5px; font-weight: 700; color: #0a3052; }
+.mit-quote { margin: 0; padding-left: 12px; border-left: 3px solid #f58220; font-size: 13.5px; font-weight: 600; color: #0a3052; line-height: 1.45; font-style: italic; }
+.mit-quote-sub { margin: 0; font-size: 12px; color: #51677c; line-height: 1.4; }
+
+.mit-limits-card { background: #fffbf8; border: 1px solid rgba(228,91,47,.2); border-top: 3px solid #f58220; border-radius: 6px; padding: 18px; box-shadow: 0 4px 14px rgba(10,48,82,.04); display: flex; flex-direction: column; gap: 8px; }
+.mit-limits-card .mit-card-header { display: flex; align-items: center; gap: 8px; }
+.mit-limits-card .mit-card-header h3 { margin: 0; font-size: 13.5px; font-weight: 700; color: #0a3052; }
+.warning-icon { color: #e45b2f; }
+.mit-limits-bold { margin: 0; font-size: 13px; font-weight: 700; color: #0a3052; line-height: 1.4; }
+.mit-limits-text { margin: 0; font-size: 11.5px; color: #51677c; line-height: 1.42; }
+
+.mit-takeaway-box { background: #0a3052; color: #fff; border-radius: 6px; padding: 18px 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 8px 24px rgba(10,48,82,.14); }
+.mit-takeaway-header { display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #f58220; font-weight: 600; }
+.mit-takeaway-quote-icon { color: #f58220; }
+.mit-takeaway-quotes { display: flex; flex-direction: column; gap: 6px; }
+.takeaway-main { margin: 0; font-size: clamp(16px, 1.4vw, 21px); font-weight: 600; color: #ffffff; line-height: 1.35; }
+.takeaway-secondary { margin: 0; font-size: clamp(16px, 1.4vw, 21px); font-weight: 600; color: #f58220; line-height: 1.35; }
+
+.mit-footer-note { font-family: 'DM Mono', monospace; font-size: 10px; color: #627588; line-height: 1.5; padding-top: 4px; }
+.mit-footer-note p { margin: 0; }
+
+.hos-compact { gap: clamp(10px, 1.6vh, 16px); overflow: hidden; max-height: calc(100dvh - 160px); justify-content: space-between; }
+.hos-compact .mit-header { padding-bottom: 8px; }
+.hos-compact .mit-title { font-size: clamp(22px, 2.6vw, 34px); margin-bottom: 4px; }
+.hos-compact .mit-subtitle { font-size: clamp(12px, 1vw, 14px); }
+.hos-compact .mit-section { gap: 6px; }
+.hos-compact .mit-section-title h2 { font-size: 12px; }
+.hos-compact .mit-card { padding: 10px 12px; }
+.hos-compact .condition-card .mit-card-body { font-size: 11.5px; }
+.hos-compact .mit-card-result { font-size: 10.5px; }
+.hos-compact .mit-cards-grid { gap: 10px; }
+.hos-compact .hos-highlight-note { font-size: clamp(14px, 1.4vw, 18px); padding: 8px 12px; }
+.hos-compact .mit-conclusion-card, .hos-compact .mit-limits-card { padding: 12px 14px; gap: 6px; }
+.hos-compact .mit-conclusion-card h3, .hos-compact .mit-limits-card h3 { font-size: 12px; }
+.hos-compact .hos-list { font-size: 11px; gap: 5px; }
+.hos-compact .mit-takeaway-box { padding: 12px 18px; gap: 6px; }
+.hos-compact .takeaway-main, .hos-compact .takeaway-secondary { font-size: clamp(13px, 1.1vw, 16px); }
+
+.mit-lab-credit { margin: 2px 0 10px; color: #e45b2f; font-family: 'DM Mono', monospace; font-weight: 700; font-size: clamp(18px, 1.8vw, 26px); letter-spacing: .04em; }
+
+.mit-roomy { justify-content: space-between; gap: clamp(10px, 1.8vh, 18px); overflow: hidden; max-height: calc(100dvh - 160px); }
+.mit-roomy .mit-header { padding-bottom: 8px; }
+.mit-roomy .mit-title { font-size: clamp(24px, 2.8vw, 36px); margin-bottom: 2px; }
+.mit-roomy .mit-lab-credit { margin: 0 0 4px; font-size: clamp(14px, 1.3vw, 18px); }
+.mit-roomy .mit-subtitle { font-size: clamp(12px, 1vw, 14px); }
+.mit-roomy .mit-section { gap: 6px; }
+.mit-roomy .mit-section-title h2 { font-size: 13px; }
+.mit-roomy .mit-section-badge { font-size: 11px; }
+.mit-roomy .mit-card { padding: 10px 12px; }
+.mit-roomy .condition-card h3 { font-size: 13px; }
+.mit-roomy .condition-card .mit-card-body { font-size: 12px; }
+.mit-roomy .mit-card-result { font-size: 11px; }
+.mit-roomy .mit-stat-value { font-size: clamp(36px, 3.8vw, 52px); }
+.mit-roomy .mit-stat-info h4 { font-size: 14px; }
+.mit-roomy .mit-stat-info p { font-size: 11.5px; }
+.mit-roomy .mit-takeaway-box { padding: 12px 18px; gap: 6px; }
+.mit-roomy .takeaway-main, .mit-roomy .takeaway-secondary { font-size: clamp(13px, 1.2vw, 17px); }
+.mit-roomy .mit-footer-note { font-size: 9px; }
+
+.hos-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: #40566b; line-height: 1.4; }
+.hos-list li { display: flex; align-items: flex-start; gap: 8px; }
+.hos-list li svg { flex-shrink: 0; margin-top: 1px; color: #e45b2f; }
+.hos-highlight-note { margin: 0; color: #0a3052; font-size: clamp(16px, 1.7vw, 22px); font-weight: 600; line-height: 1.4; padding: 10px 14px; border-left: 3px solid #f58220; background: rgba(10,48,82,.03); border-radius: 4px; }
+
+.progress { gap: 16px; min-width: min(340px,42vw); }.progress-track { height: 1px; background: rgba(10,48,82,.25); flex: 1; }.progress-track span { display: block; height: 2px; background: #f58220; transition: width .35s ease; }.navigation { gap: 14px; }.navigation button { width: 38px; height: 38px; border: 1px solid rgba(10,48,82,.25); border-radius: 50%; }
+.navigation button:hover, .icon-button:hover { background: #f58220; color: #fff; border-color: #f58220; }
+@keyframes reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1000px) {
+  .concept-grid { grid-template-columns: repeat(3, 1fr); }.concept-card { min-height: 175px; }
+  .mit-cards-grid.three-col { grid-template-columns: 1fr; }
+  .mit-cards-grid.two-col, .mit-cards-grid.two-col-unequal { grid-template-columns: 1fr; }
+  .humanos-cards-row { grid-template-columns: 1fr; }
+  .humanos-stage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .presentation-shell { padding: 20px 20px 22px; }.topbar-meta { display: none; }.slide { grid-template-columns: 1fr; align-content: center; }.slide-copy { align-self: end; }.slide-art { width: min(82vw, 390px); justify-self: center; margin-top: 3vh; }.memory-slide-content { align-self: center; }.memory-heading { display: block; margin-bottom: 20px; }.memory-heading h1 { font-size: clamp(34px, 11vw, 58px); }.memory-lead { margin-top: 18px; }.concept-grid { grid-template-columns: 1fr 1fr; gap: 8px; max-height: 42vh; overflow: auto; }.concept-card { min-height: 160px; padding: 14px; gap: 12px; }.concept-card h2 { font-size: 15px; }.concept-card p { font-size: 12px; } h1 { font-size: clamp(42px,14vw,72px); }.description { margin-top: 24px; }.progress { min-width: 0; flex: 1; }.bottom-bar { gap: 18px; }
+  .mit-stat-card { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
